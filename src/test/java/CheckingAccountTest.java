@@ -1,11 +1,19 @@
 import accounts.CheckingAccount;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CheckingAccountTest {
-   private CheckingAccount checkingAccount = new CheckingAccount("Unknown", 1_000, "расчетный счет", 0);
+    private CheckingAccount checkingAccount;
+
+    @BeforeEach
+    public void createCheckingAccount() {
+        checkingAccount = new CheckingAccount("Unknown", 1_000, "расчетный счет", 0);
+    }
+
 
     @Test
     @DisplayName("Тест метода добавления денежных средств")

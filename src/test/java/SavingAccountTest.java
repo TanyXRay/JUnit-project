@@ -1,11 +1,17 @@
 import accounts.SavingsAccount;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SavingAccountTest {
-    private SavingsAccount savingsAccount = new SavingsAccount("Unknown", 1_000, "накопительный счет", 500);
+    private SavingsAccount savingsAccount;
+
+    @BeforeEach
+    public void createSavingAccount() {
+        savingsAccount = new SavingsAccount("Unknown", 1_000, "накопительный счет", 500);
+    }
 
     @Test
     @DisplayName("Тест метода добавления денежных средств")

@@ -1,4 +1,5 @@
 import accounts.CreditAccount;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class CreditAccountTest {
-    private CreditAccount creditAccount = new CreditAccount("Unknown", 1, "кредитный счет");
+    private CreditAccount creditAccount;
+
+    @BeforeEach
+    public void createCreditAccount() {
+        creditAccount = new CreditAccount("Unknown", 1, "кредитный счет");
+    }
 
     @Test
     @DisplayName("Тест метода добавления денежных средств")

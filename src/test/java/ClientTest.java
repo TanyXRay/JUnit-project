@@ -1,13 +1,19 @@
 import accounts.Account;
 import accounts.CheckingAccount;
 import clients.Client;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ClientTest {
-    private Client client = new Client("Unknown", 2);
+    private Client client;
+
+    @BeforeEach
+    public void createClient() {
+        client = new Client("Unknown", 2);
+    }
 
     @Test
     @DisplayName("Тестирование метода добавления нового аккаунта")
@@ -25,7 +31,6 @@ public class ClientTest {
         assertFalse(client.pay(100));
         System.out.println("Тестирование метода pay завершено");
     }
-
 
     @Test
     @DisplayName("Тестирование метода подтверждения зачисления денежных средств")
